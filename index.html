@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Clement Magenties – E-Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- TOP BAR FLOTTANTE ARRONDIE -->
+  <header class="topbar">
+    <div class="topbar__left">
+      <div class="topbar__avatar">
+        <img src="profil.jpg" alt="Portrait de Clement Magenties" />
+      </div>
+      <div class="topbar__name">Clement Magenties</div>
+    </div>
+    <div class="topbar__right">
+      <a class="btn btn--linkedin" href="https://www.linkedin.com/in/magenties-clement/" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8.99h5V24H0V8.99zM8.5 8.99h4.79v2.04h.07c.67-1.27 2.3-2.61 4.74-2.61 5.07 0 6 3.34 6 7.68V24h-5v-7.95c0-1.9-.03-4.34-2.64-4.34-2.64 0-3.04 2.06-3.04 4.2V24h-5V8.99z"/>
+        </svg>
+        LinkedIn
+      </a>
+      <a class="btn btn--ghost" href="#contact">Contact</a>
+      <a class="btn btn--ghost" href="#cv">CV</a>
+    </div>
+  </header>
+
+  <!-- (badge supprimé) -->
+
+  <!-- HERO 2 COLONNES : grande photo à gauche -->
+  <section class="hero hero--split">
+    <div class="hero__image">
+      <img src="profil.jpg" alt="Portrait de Clement Magenties">
+    </div>
+    <div class="hero__content">
+      <h1>Engineering Student • Innovation & Technology</h1>
+      <p class="hero__sub">
+        E-portfolio : projets d’ingénierie, mobilité, engagement citoyen, activités & développement pro.
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT + SIDEBAR (contacts + petite vidéo) -->
+  <section id="about" class="about">
+    <div class="about__grid">
+      <article class="block about__text fade-scroll">
+        <h2>About me</h2>
+        <p>
+          Étudiant en ingénierie, motivé par l’innovation utile et durable. J’aime
+          concevoir des solutions robustes, claires et centrées utilisateur.
+        </p>
+      </article>
+
+      <aside id="contact" class="sidebar">
+        <div class="block contact-card fade-scroll">
+          <h3>Contact</h3>
+          <ul class="contact-list">
+            <li>
+              <span>Email</span>
+              <a href="mailto:clement.magenties@gmail.com">clement.magenties@gmail.com</a>
+            </li>
+            <li>
+              <span>Téléphone</span>
+              <a href="tel:+33637792012">+33 6 37 79 20 12</a>
+            </li>
+            <li>
+              <span>LinkedIn</span>
+              <a href="https://www.linkedin.com/in/magenties-clement/" target="_blank" rel="noopener">
+                linkedin.com/in/magenties-clement
+              </a>
+            </li>
+          </ul>
+          <a class="btn btn--linkedin btn--full" href="https://www.linkedin.com/in/magenties-clement/" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8.99h5V24H0V8.99zM8.5 8.99h4.79v2.04h.07c.67-1.27 2.3-2.61 4.74-2.61 5.07 0 6 3.34 6 7.68V24h-5v-7.95c0-1.9-.03-4.34-2.64-4.34-2.64 0-3.04 2.06-3.04 4.2V24h-5V8.99z"/>
+            </svg>
+            Voir mon LinkedIn
+          </a>
+        </div>
+
+        <!-- Vidéo (petite case) -->
+        <div class="block video-card fade-scroll">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/lfC99-JU_iE" title="Vidéo de présentation" allowfullscreen></iframe>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- GRILLE PRINCIPALE : Civic en premier, plus grand, avec galerie -->
+  <main class="grid">
+    <section id="civic" class="block block--civic fade-scroll">
+      <h2>Civic Engagement</h2>
+      <p>
+        Mentorat STEM et prochain voyage solidaire au Népal. Objectifs : inclusion, impact concret et partage
+        de compétences. Galerie prête pour vos photos de terrain.
+      </p>
+      <div class="gallery">
+        <img src="nepal1.jpg" alt="Projet solidaire Népal 1">
+        <img src="nepal2.jpg" alt="Projet solidaire Népal 2">
+        <img src="nepal3.jpg" alt="Projet solidaire Népal 3">
+        <img src="nepal4.jpg" alt="Projet solidaire Népal 4">
+      </div>
+    </section>
+
+    <section id="engineering" class="block block--tall fade-scroll">
+      <h2>Engineering Courses</h2>
+      <p>
+        Système IoT de suivi énergétique (capteurs, acquisition de données, dashboard).
+        Compétences : embarqué, data, électronique, travail d’équipe.
+      </p>
+      <img class="block__img" src="project.jpg" alt="Projet d’ingénierie">
+    </section>
+
+    <section id="mobility" class="block fade-scroll">
+      <h2>Mobility</h2>
+      <p>
+        Semestre en Allemagne : ouverture culturelle, anglais technique, démarche durable.
+      </p>
+      <img class="block__img" src="germany.jpg" alt="Mobilité internationale">
+    </section>
+
+    <section id="sports" class="block fade-scroll">
+      <h2>Sports & Activities</h2>
+      <p>
+        Football (esprit d’équipe, rigueur) et photographie (créativité, sens du détail).
+      </p>
+      <img class="block__img" src="sports.jpg" alt="Sports et activités">
+    </section>
+
+    <!-- CV pleine page (pas de scroll interne), bouton centré -->
+    <section id="cv" class="block block--cv fade-scroll">
+      <h2>CV</h2>
+      <p class="cv-note">Affiché directement ci-dessous. Défilement de la page si nécessaire.</p>
+      <object class="cv-frame"
+              data="ClementMagenties.pdf#toolbar=0&navpanes=0&view=FitH"
+              type="application/pdf">
+        <embed src="ClementMagenties.pdf#toolbar=0&navpanes=0&view=FitH" type="application/pdf" />
+      </object>
+      <div class="cv-actions">
+        <a class="btn btn--download" href="ClementMagenties.pdf" download>Télécharger le CV</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 Clement Magenties — E-Portfolio
+  </footer>
+
+  <script>
+    // Révélation au scroll
+    const faders = document.querySelectorAll('.fade-scroll');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+    }, { threshold: 0.15 });
+    faders.forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
