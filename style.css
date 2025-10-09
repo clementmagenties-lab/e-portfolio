@@ -147,7 +147,69 @@ body{
 /* FOOTER */
 .footer{text-align:center; color:var(--muted); padding:20px 12px}
 
-/* RESPONSIVE */
+/* ------------------------- */
+/* CONTACT (amélioré)       */
+/* ------------------------- */
+.contact-card{
+  background:linear-gradient(180deg,#fff, #fafbff 85%);
+  border:1px solid var(--border);
+  border-radius:14px;
+}
+.contact-card h3{
+  margin-top:0;
+  padding-bottom:8px;
+  border-bottom:1px dashed var(--border);
+}
+.contact-list{
+  list-style:none; margin:12px 0 0; padding:0;
+  display:flex; flex-direction:column; gap:10px; /* espace visuel, taille quasi inchangée */
+}
+.contact-list li{
+  position:relative;
+  padding:10px 12px 10px 42px; /* petit padding + espace pour l’icône */
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.contact-list li:hover{
+  transform:translateY(-1px);
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+  border-color:#dfe3ee;
+}
+.contact-list li span:first-child{
+  display:block; font-size:12px; color:var(--muted); line-height:1;
+  margin-bottom:4px;
+}
+.contact-list a{
+  text-decoration:none; color:var(--accent); font-weight:700; word-break:break-word;
+}
+.contact-list a:hover{color:var(--accent-strong)}
+.contact-list li::before{
+  content:""; position:absolute; left:12px; top:50%; transform:translateY(-50%);
+  width:18px; height:18px; background:var(--accent);
+  opacity:.9;
+}
+/* Email icon */
+.contact-list li:nth-child(1)::before{
+  -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z'/></svg>") center/contain no-repeat;
+          mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z'/></svg>") center/contain no-repeat;
+}
+/* Phone icon */
+.contact-list li:nth-child(2)::before{
+  -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.3 11.3 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 8a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.3 11.3 0 0 0 .56 3.5 1 1 0 0 1-.26 1z'/></svg>") center/contain no-repeat;
+          mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.3 11.3 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 8a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.3 11.3 0 0 0 .56 3.5 1 1 0 0 1-.26 1z'/></svg>") center/contain no-repeat;
+}
+/* LinkedIn icon */
+.contact-list li:nth-child(3)::before{
+  -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8.99h5V24H0zM8.5 8.99h4.79v2.04h.07c.67-1.27 2.3-2.61 4.74-2.61 5.07 0 6 3.34 6 7.68V24h-5v-7.95c0-1.9-.03-4.34-2.64-4.34-2.64 0-3.04 2.06-3.04 4.2V24h-5z'/></svg>") center/contain no-repeat;
+          mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8.99h5V24H0zM8.5 8.99h4.79v2.04h.07c.67-1.27 2.3-2.61 4.74-2.61 5.07 0 6 3.34 6 7.68V24h-5v-7.95c0-1.9-.03-4.34-2.64-4.34-2.64 0-3.04 2.06-3.04 4.2V24h-5z'/></svg>") center/contain no-repeat;
+}
+.contact-card .btn--full{ margin-top:10px; border-radius:12px; }
+
+/* ------------------------- */
+/* RESPONSIVE               */
+/* ------------------------- */
 @media (max-width:980px){
   .about__grid{grid-template-columns:1fr}
   .grid{grid-template-columns:repeat(6,1fr)}
@@ -155,17 +217,25 @@ body{
   #engineering,#mobility,#sports,#career,#cv{grid-column:1 / -1}
   .cv-frame{height:1200px}
 }
+
 @media (max-width:640px){
-  .topbar{height:auto; padding:10px; gap:8px}
-  .topbar__right{gap:8px}
-  .hero--split{grid-template-columns:1fr; gap:12px}
-  .hero__image{aspect-ratio:auto; height:320px}
-  .grid{grid-template-columns:1fr}
+  /* Topbar : avatar + nom + switch langue uniquement */
+  .topbar{
+    top:8px;
+    left:50%; transform:translateX(-50%);
+    width:calc(100% - 16px);
+    height:60px;
+    padding:8px 10px;
+    border-radius:14px;
+    gap:10px;
+    justify-content:space-between;
+  }
+  .topbar__avatar{width:40px;height:40px}
+  .topbar__name{font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:40vw}
+  .topbar__left{min-width:0}
 
-  .timeline{padding-left:36px}
-  .timeline__marker{left:-9px; top:7px}
-  .timeline__date{margin-left:16px; margin-bottom:6px}
-  .timeline__content{margin-left:16px}
+  /* Masquer tous les boutons (LinkedIn, Contact, CV) et garder seulement le switch */
+  .topbar__right > .btn{display:none}
+  .topbar__right{gap:0}
 
-  .cv-frame{height:1000px}
-}
+  /* Switch langue confortab*
