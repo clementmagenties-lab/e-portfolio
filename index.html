@@ -5,10 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Clement Magenties – E-Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
-    // Enable JS-aware animations fallback
-    document.documentElement.classList.add('js');
-  </script>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -21,16 +18,15 @@
       <div class="topbar__name">Clement Magenties</div>
     </div>
     <div class="topbar__right">
-      <!-- LinkedIn button (unchanged, blue with logo) -->
+      <!-- Desktop buttons -->
       <a class="btn btn--linkedin" href="https://www.linkedin.com/in/magenties-clement/" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-          <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8.99h5V24H0V8.99zM8.5 8.99h4.79v2.04h.07c.67-1.27 2.3-2.61 4.74-2.61 5.07 0 6 3.34 6 7.68V24h-5v-7.95c0-1.9-.03-4.34-2.64-4.34-2.64 0-3.04 2.06-3.04 4.2V24h-5V8.99z"/>
+          <path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8.99h5V24H0zM8.5 8.99h4.79v2.04h.07c.67-1.27 2.3-2.61 4.74-2.61 5.07 0 6 3.34 6 7.68V24h-5v-7.95c0-1.9-.03-4.34-2.64-4.34-2.64 0-3.04 2.06-3.04 4.2V24h-5z"/>
         </svg>
         <span data-lang="en">View my LinkedIn</span>
         <span data-lang="fr">Voir mon LinkedIn</span>
       </a>
 
-      <!-- Nav buttons -->
       <a class="btn btn--ghost" href="#contact">
         <span data-lang="en">Contact</span>
         <span data-lang="fr">Contact</span>
@@ -84,34 +80,10 @@
           </span>
         </p>
 
-        <!-- Highlights to fill space nicely -->
-        <div class="highlights">
-          <div class="highlight">
-            <strong>2 years</strong>
-            <span data-lang="en">Preparatory classes</span>
-            <span data-lang="fr">Classe préparatoire</span>
-          </div>
-          <div class="highlight">
-            <strong>Python</strong>
-            <span data-lang="en">Data & control</span>
-            <span data-lang="fr">Données & commande</span>
-          </div>
-          <div class="highlight">
-            <strong>EEA</strong>
-            <span data-lang="en">ENSEEIHT major</span>
-            <span data-lang="fr">Filière ENSEEIHT</span>
-          </div>
-        </div>
-
-        <div class="chips">
-          <span class="chip">Embedded systems</span>
-          <span class="chip" data-lang="en">Power & energy</span>
-          <span class="chip" data-lang="fr">Énergie & puissance</span>
-          <span class="chip" data-lang="en">Automation</span>
-          <span class="chip" data-lang="fr">Automatique</span>
-          <span class="chip" data-lang="en">Signal & control</span>
-          <span class="chip" data-lang="fr">Signal & commande</span>
-        </div>
+        <!-- ABOUT IMAGE (ratio 682x322, no caption) -->
+        <figure class="about__photo">
+          <img src="about.jpg" alt="Electronics workbench and projects">
+        </figure>
       </article>
 
       <aside id="contact" class="sidebar">
@@ -237,7 +209,6 @@
         <span data-lang="fr">Développement professionnel</span>
       </h2>
       <div class="timeline">
-        <!-- Newest first -->
         <div class="timeline__item">
           <div class="timeline__marker"></div>
           <div class="timeline__date">2025</div>
@@ -271,13 +242,27 @@
         <span data-lang="en">Resume</span>
         <span data-lang="fr">CV</span>
       </h2>
-      <object class="cv-frame"
-              data="ClementMagenties.pdf#toolbar=0&navpanes=0&view=FitH"
-              type="application/pdf"></object>
+
+      <!-- A4 IMAGE VIEWER (robuste mobile/desktop) -->
+      <figure class="cv-a4">
+        <img class="cv-img" data-lang="en" src="ClementMagentiesEN.png" alt="Resume - English (A4)">
+        <img class="cv-img" data-lang="fr" src="ClementMagentiesFR.png" alt="CV - Français (A4)">
+      </figure>
+
       <div class="cv-actions">
-        <a class="btn btn--download" href="ClementMagenties.pdf" download>
-          <span data-lang="en">Download my Resume</span>
-          <span data-lang="fr">Télécharger mon CV</span>
+        <a class="btn btn--download" data-lang="en" href="ClementMagentiesEN.pdf" download>Download my Resume</a>
+        <a class="btn btn--download" data-lang="fr" href="ClementMagenties.pdf" download>Télécharger mon CV</a>
+
+        <a class="btn btn--ghost" href="#contact">
+          <span data-lang="en">Contact</span>
+          <span data-lang="fr">Contact</span>
+        </a>
+
+        <a class="btn btn--linkedin" href="https://www.linkedin.com/in/magenties-clement/" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8.99h5V24H0V8.99zM8.5 8.99h4.79v2.04h.07c.67-1.27 2.3-2.61 4.74-2.61 5.07 0 6 3.34 6 7.68V24h-5v-7.95c0-1.9-.03-4.34-2.64-4.34-2.64 0-3.04 2.06-3.04 4.2V24h-5z"/>
+          </svg>
+          <span>LinkedIn</span>
         </a>
       </div>
     </section>
@@ -289,28 +274,18 @@
   </footer>
 
   <script>
-    // Robust scroll animations with fallbacks
+    // Scroll reveal (failsafe)
     (function(){
       const els = document.querySelectorAll('.fade-scroll');
-
-      function revealAll() { els.forEach(el => el.classList.add('is-visible')); }
-
-      if (!('IntersectionObserver' in window)) { revealAll(); return; }
-
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => entry.target.classList.add('is-visible'), i * 120);
-          }
-        });
-      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
-
-      els.forEach(el => io.observe(el));
-
-      setTimeout(() => {
-        const anyVisible = Array.from(els).some(el => el.classList.contains('is-visible'));
-        if (!anyVisible) revealAll();
-      }, 2000);
+      function revealAll(){ els.forEach(el => el.classList.add('is-visible')); }
+      if(!('IntersectionObserver' in window)){ revealAll(); return; }
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach((e,i)=>{ if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('is-visible'), i*120); }});
+      },{rootMargin:'0px 0px -10% 0px', threshold:0.1});
+      els.forEach(el=>io.observe(el));
+      setTimeout(()=>{
+        if(!Array.from(els).some(el=>el.classList.contains('is-visible'))) revealAll();
+      },2000);
     })();
 
     // Language switch
@@ -318,18 +293,17 @@
       const root = document.documentElement;
       const enBtn = document.querySelector('[data-lang-switch="en"]');
       const frBtn = document.querySelector('[data-lang-switch="fr"]');
-
       function setLang(lang){
-        if(lang === 'fr'){
+        if(lang==='fr'){
           root.classList.remove('lang-en'); root.classList.add('lang-fr');
           enBtn.setAttribute('aria-pressed','false'); frBtn.setAttribute('aria-pressed','true');
-        } else {
+        }else{
           root.classList.remove('lang-fr'); root.classList.add('lang-en');
           enBtn.setAttribute('aria-pressed','true'); frBtn.setAttribute('aria-pressed','false');
         }
       }
-      enBtn.addEventListener('click', () => setLang('en'));
-      frBtn.addEventListener('click', () => setLang('fr'));
+      enBtn.addEventListener('click',()=>setLang('en'));
+      frBtn.addEventListener('click',()=>setLang('fr'));
     })();
   </script>
 </body>
