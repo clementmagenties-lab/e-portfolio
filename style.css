@@ -296,3 +296,38 @@ body{
     width:100% !important;
   }
 }
+
+/* === Effets cliquables sur l'image du CV === */
+
+/* Lien du CV : main + transition douce */
+.cv-a4 a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+}
+
+/* Image du CV : s'adapte et a un arrondi propre */
+.cv-a4 a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Effet au survol : zoom + ombre douce */
+.cv-a4 a:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.2);
+}
+
+/* Sur mobile, désactive le zoom trop fort pour éviter les glitchs tactiles */
+@media (max-width: 640px) {
+  .cv-a4 a:hover {
+    transform: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  }
+}
