@@ -331,3 +331,34 @@ body{
     box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   }
 }
+/* === Corrige la section CV pour qu'elle occupe toute la largeur === */
+
+/* Forcer la section CV à une seule colonne */
+.block--cv {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+/* Forcer le conteneur d'image du CV à occuper toute la ligne */
+.cv-a4 {
+  display: block !important;
+  width: 100% !important;
+  max-width: 900px; /* garde une limite esthétique sur desktop */
+  margin: 0 auto !important;
+  aspect-ratio: 210/297; /* format A4 */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Empêche toute division en colonnes à l’intérieur du main grid */
+.grid > #cv {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+}
+/* Ne garder visible que le lien du CV dans la langue active */
+.cv-a4 a[data-lang]{display:none!important}
+.lang-en .cv-a4 a[data-lang="en"]{display:block!important}
+.lang-fr .cv-a4 a[data-lang="fr"]{display:block!important}
