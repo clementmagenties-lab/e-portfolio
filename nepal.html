@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr" class="lang-fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TEAMNEPAL — Clément Magenties</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand__dot"></span><span>Clément Magenties</span></a>
+  </header>
+
+  <main>
+    <!-- EN-TÊTE DU PROJET -->
+    <div class="project-header-bg reveal" style="background-image: url('nepal.jpg');">
+      <div class="project-header-content">
+        <p class="eyebrow">TEAMNEPAL · JUILLET–AOÛT 2026</p>
+        <h1>Chapali, Népal</h1>
+        <p class="hero__lead">Cinq semaines à co-écrire et tourner des courts-métrages avec des lycéens népalais, entre ateliers d'écriture, tournages et une grande journée de sport.</p>
+      </div>
+    </div>
+
+    <!-- ÉTAPE 1 -->
+    <div class="story-block" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80');">
+      <div class="story-card reveal">
+        <span class="story-num">01</span>
+        <h2>Comment c'est né</h2>
+        <p>Avec trois autres étudiants de l'ENSEEIHT, on voulait monter un projet solidaire à l'étranger. On a créé l'association TEAMNEPAL, et on a contacté directement une école qui accueillait déjà des bénévoles : Victor Hugo Manjushree Vidyapith, près de Katmandou.</p>
+        <p>L'école scolarise 260 élèves. Sa directrice cherchait un moyen de faire s'exprimer les élèves autrement qu'en cours classique. On a proposé la vidéo, en s'appuyant sur nos clubs vidéo (TVN7) et solidarité internationale (Human7).</p>
+      </div>
+    </div>
+
+    <!-- ÉTAPE 2 -->
+    <div class="story-block" style="background-image: url('https://images.unsplash.com/photo-1513271786270-e660e1d51cda?auto=format&fit=crop&w=1600&q=80');">
+      <div class="story-card reveal">
+        <span class="story-num">02</span>
+        <h2>Sur place à Chapali</h2>
+        <p>Cinq semaines sur place, logés chez la directrice, au rythme de l'école. Chaque classe, de la 6e à la seconde, a écrit et tourné un court-métrage autour de ses propres idées.</p>
+        <p>On formait les élèves aux caméras et aux micros, mais ce sont eux qui jouaient, et les plus curieux participaient au montage. En parallèle, on a organisé une journée d'Olympiades sportives pour toute l'école.</p>
+      </div>
+    </div>
+
+    <!-- ÉTAPE 3 -->
+    <div class="story-block" style="background-image: url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1600&q=80');">
+      <div class="story-card reveal">
+        <span class="story-num">03</span>
+        <h2>Ce qu'on en retient</h2>
+        <p>Le séjour s'est terminé par une projection festive des trois films devant les 260 élèves, et tout le matériel technique est resté sur place.</p>
+        <p>L'objectif de fond reste le même depuis le début : que TEAMNEPAL devienne une passerelle durable entre l'ENSEEIHT et l'école, avec une nouvelle promotion d'étudiants qui reprend le projet chaque été.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (() => {
+      const revealElements = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); } });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => observer.observe(el));
+      } else { revealElements.forEach(el => el.classList.add("is-visible")); }
+    })();
+  </script>
+</body>
+</html>

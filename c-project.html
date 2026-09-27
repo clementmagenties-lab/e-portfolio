@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr" class="lang-fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Robot BoB — Clément Magenties</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand__dot"></span><span>Clément Magenties</span></a>
+  </header>
+
+  <main>
+    <div class="project-header-bg reveal" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80');">
+      <div class="project-header-content">
+        <p class="eyebrow">ENSEEIHT · BE 1A · 2024–2025[cite: 11]</p>
+        <h1>Robot BoB</h1>
+        <p class="hero__lead">Faire rouler un robot mobile en écrivant nous-mêmes tous les pilotes en C, sur une carte FPGA DE1-SoC avec un processeur NIOS II.[cite: 11]</p>
+      </div>
+    </div>
+
+    <div class="story-block" style="background-image: url('https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=1600&q=80');">
+      <div class="story-card reveal">
+        <span class="story-num">01</span>
+        <h2>Le matériel & Décodage</h2>
+        <p>Le processeur communique avec les capteurs et les moteurs par entrées/sorties mappées en mémoire. Une petite zone de 64 octets est réservée au robot, divisée en 8 zones de 8 octets pour chaque composant (afficheurs, LEDs, joystick, capteurs).[cite: 11]</p>
+        <p>On a dessiné la logique de sélection (décodage d'adresse) avec des portes logiques sous Quartus avant de coder la partie logicielle.[cite: 11]</p>
+      </div>
+    </div>
+
+    <div class="story-block" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80');">
+      <div class="story-card reveal">
+        <span class="story-num">02</span>
+        <h2>Les pilotes C</h2>
+        <p>Chaque périphérique a son propre pilote en C. Pour les afficheurs 7 segments et les LEDs, c'est de l'écriture simple.[cite: 11]</p>
+        <p>Pour le joystick et les capteurs de ligne, la lecture renvoie un mot de 16 bits. Il faut isoler chaque bit avec un masque binaire (opération ET) pour extraire l'état spécifique d'un capteur.[cite: 11]</p>
+      </div>
+    </div>
+
+    <div class="story-block" style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1600&q=80');">
+      <div class="story-card reveal">
+        <span class="story-num">03</span>
+        <h2>L'Autonomie</h2>
+        <p>Le programme principal est une boucle infinie stricte : lecture des capteurs, calculs, puis commandes des moteurs.[cite: 11]</p>
+        <ul>
+          <li><strong>Pilotage joystick</strong> : direct ou par impulsion mémorisée.[cite: 11]</li>
+          <li><strong>Suivi de ligne</strong> : avec 3 capteurs infrarouges.[cite: 11]</li>
+          <li><strong>Mode esclave</strong> : le robot maintient une distance fixe face à un obstacle grâce au télémètre central.[cite: 11]</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (() => {
+      const revealElements = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); } });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => observer.observe(el));
+      } else { revealElements.forEach(el => el.classList.add("is-visible")); }
+    })();
+  </script>
+</body>
+</html>

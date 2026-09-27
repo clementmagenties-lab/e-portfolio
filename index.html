@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="fr" class="lang-fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Portfolio de Clément Magenties — étudiant ingénieur à l'ENSEEIHT, 3EA.">
+  <title>Clément Magenties — Engineering Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- LA VIDÉO DE FOND GLOBALE -->
+  <div class="site-bg">
+    <!-- Remplace "mavideo.mp4" par le nom exact de ton fichier vidéo -->
+    <video autoplay loop muted playsinline class="bg-video">
+      <source src="mavideo.mp4" type="video/mp4">
+    </video>
+    <!-- Ce calque assombrit la vidéo pour garder le texte lisible -->
+    <div class="bg-overlay"></div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Accueil">
+      <span class="brand__dot"></span>
+      <span>Clément Magenties</span>
+    </a>
+    <nav class="nav">
+      <a href="#projects"><span data-lang="fr">Projets</span><span data-lang="en">Projects</span></a>
+      <a href="#journey"><span data-lang="fr">Parcours</span><span data-lang="en">Journey</span></a>
+      <a href="#about"><span data-lang="fr">À propos</span><span data-lang="en">About</span></a>
+      <a href="#cv">CV</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group">
+        <button class="lang-btn" data-lang-switch="fr" aria-pressed="true">FR</button>
+        <button class="lang-btn" data-lang-switch="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero-fullscreen">
+      <div class="hero-glass reveal">
+        <p class="hero__eyebrow">
+          <span data-lang="fr">Étudiant Ingénieur · ENSEEIHT · 3EA</span>
+          <span data-lang="en">Engineering Student · ENSEEIHT · 3EA</span>
+        </p>
+        
+        <h1 class="hero__name">Clément Magenties</h1>
+        
+        <p class="hero__skills">
+          <span data-lang="fr">Automatique · Systèmes embarqués · Drones</span>
+          <span data-lang="en">Control Theory · Embedded Systems · Drones</span>
+        </p>
+
+        <p class="hero__text">
+          <span data-lang="fr">Étudiant ingénieur à l’ENSEEIHT, je m’intéresse à la conception, au contrôle et à l’expérimentation de systèmes réels — avec une approche très pratique.</span>
+          <span data-lang="en">Engineering student at ENSEEIHT, I am interested in the design, control, and experimentation of real-world systems — with a highly practical approach.</span>
+        </p>
+
+        <div class="hero__actions">
+          <a class="button button--primary" href="#projects">
+            <span data-lang="fr">Voir mes projets</span><span data-lang="en">Explore my projects</span>
+          </a>
+          <a class="button button--secondary" href="#cv">CV ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <div class="section-heading reveal">
+        <p class="eyebrow">01 · <span data-lang="fr">PROJETS</span><span data-lang="en">PROJECTS</span></p>
+        <h2><span data-lang="fr">Ce que je construis</span><span data-lang="en">What I build</span></h2>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card glass-panel reveal">
+          <a class="project-card__media" href="drone.html">
+            <img src="https://images.unsplash.com/photo-1581458925206-8d197607a9ee?auto=format&fit=crop&w=800&q=80" alt="Drone FPV">
+          </a>
+          <div class="project-card__body">
+            <div class="project-card__meta"><span>01</span><span>2026</span></div>
+            <h3>FPV Drone</h3>
+            <p class="project-card__subtitle">Flight Control & PID Optimization</p>
+            <p><span data-lang="fr">Analyse de Blackbox et optimisation du comportement en vol.</span></p>
+            <div class="tags"><span>Python</span><span>PID</span><span>Blackbox</span></div>
+            <a class="text-link" href="drone.html">Explorer le projet →</a>
+          </div>
+        </article>
+
+        <article class="project-card glass-panel reveal reveal--delay">
+          <a class="project-card__media" href="c-project.html">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Projet Robot BoB">
+          </a>
+          <div class="project-card__body">
+            <div class="project-card__meta"><span>02</span><span>ENSEEIHT</span></div>
+            <h3>Robot BoB</h3>
+            <p class="project-card__subtitle">Low-Level Drivers & FPGA</p>
+            <p><span data-lang="fr">Piloter un robot en C sur une carte FPGA DE1-SoC.</span></p>
+            <div class="tags"><span>C</span><span>FPGA</span><span>NIOS II</span></div>
+            <a class="text-link" href="c-project.html">Explorer le projet →</a>
+          </div>
+        </article>
+
+        <article class="project-card glass-panel reveal">
+          <a class="project-card__media" href="flywheel.html">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Flywheel">
+          </a>
+          <div class="project-card__body">
+            <div class="project-card__meta"><span>03</span><span>TIPE</span></div>
+            <h3>Flywheel Energy</h3>
+            <p class="project-card__subtitle">Experimental Storage System</p>
+            <p><span data-lang="fr">Banc d'essai pour l'étude du stockage d'énergie par volant d'inertie.</span></p>
+            <div class="tags"><span>Energy</span><span>Python</span></div>
+            <a class="text-link" href="flywheel.html">Explorer le projet →</a>
+          </div>
+        </article>
+
+        <article class="project-card glass-panel reveal reveal--delay">
+          <a class="project-card__media" href="nepal.html">
+            <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80" alt="Projet Népal">
+          </a>
+          <div class="project-card__body">
+            <div class="project-card__meta"><span>04</span><span>TEAMNEPAL</span></div>
+            <h3>Nepal</h3>
+            <p class="project-card__subtitle">Solidarity & Engineering Project</p>
+            <p><span data-lang="fr">5 semaines au Népal pour réaliser des courts-métrages avec des lycéens.</span></p>
+            <div class="tags"><span>Vidéo</span><span>École</span></div>
+            <a class="text-link" href="nepal.html">Découvrir le projet →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section id="journey" class="section journey">
+      <div class="section-heading reveal">
+        <p class="eyebrow">02 · PARCOURS</p>
+        <h2>Mon parcours d'ingénieur</h2>
+      </div>
+
+      <div class="journey-grid">
+        <article class="journey-school glass-panel reveal">
+          <div class="journey-school__image">
+            <img src="n7.png" alt="ENSEEIHT">
+          </div>
+          <div class="journey-school__content">
+            <p class="eyebrow">2025 → NOW</p>
+            <h3>ENSEEIHT</h3>
+            <p class="journey-school__title">Électronique · Énergie électrique · Automatique</p>
+            <p>Formation d'ingénieur à Toulouse. Je me spécialise en automatique, électronique et énergie électrique.</p>
+          </div>
+        </article>
+
+        <div class="timeline glass-panel reveal reveal--delay">
+          <div class="timeline-item"><span class="timeline-year">2025</span><div><h3>ENSEEIHT · 3EA</h3><p>Électronique, Énergie & Automatique</p></div></div>
+          <div class="timeline-item"><span class="timeline-year">2023–2025</span><div><h3>CPGE · Pierre de Fermat</h3><p>Filière PC (Physique-Chimie)</p></div></div>
+          <div class="timeline-item"><span class="timeline-year">2023</span><div><h3>Baccalauréat général</h3><p>Mention Très Bien, félicitations du jury</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="section-heading reveal">
+        <p class="eyebrow">03 · À PROPOS</p>
+        <h2>Qui je suis</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-photo reveal">
+          <img src="moi.png" alt="Clément Magenties">
+        </div>
+
+        <div class="about-copy glass-panel reveal reveal--delay" style="padding: 40px; border-radius: 20px;">
+          <p class="about-intro">Je m'appelle Clément, j'ai 21 ans, et j'étudie l'ingénierie à l'ENSEEIHT. Ce qui me plaît, c'est comprendre comment un système fonctionne vraiment, puis le construire de mes mains.</p>
+          <div class="values">
+            <div class="value"><h3>Construire</h3><p>Je monte et je règle du matériel : drones, petits montages électroniques.</p></div>
+            <div class="value"><h3>Expérimenter</h3><p>Je relève des mesures, j'analyse les courbes, et j'ajuste la commande.</p></div>
+            <div class="value"><h3>Filmer</h3><p>Je photographie ce que je fais pour documenter le processus de création.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="personal-grid reveal">
+        <div class="personal-card glass-panel"><span class="personal-icon">🚁</span><h3>FPV & Vidéo</h3><p>Montage vidéo, pilotage FPV et électronique embarquée (ExpressLRS, Betaflight).</p></div>
+        <div class="personal-card glass-panel"><span class="personal-icon">🏐</span><h3>Sport d'équipe</h3><p>Handball et basketball, en club depuis le lycée.</p></div>
+        <div class="personal-card glass-panel"><span class="personal-icon">⛰️</span><h3>Outdoor</h3><p>Vélo de route, randonnée en montagne et paddle.</p></div>
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv" class="section">
+      <div class="cv-card glass-panel reveal">
+        <div>
+          <p class="eyebrow">04 · CV</p>
+          <h2>Mon parcours en une page.</h2>
+          <p>Retrouvez mon CV technique complet, mes expériences et mes outils.</p>
+          <div class="cv-actions">
+            <a class="button button--primary" href="ClementMagentiesFR.pdf" download>Télécharger le CV ↓</a>
+            <a class="button button--secondary" href="https://www.linkedin.com/in/magenties-clement/" target="_blank">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer section" style="padding-top:0;">
+    <span>© 2026 Clément Magenties</span>
+    <span>ENSEEIHT · 3EA</span>
+  </footer>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const buttons = document.querySelectorAll("[data-lang-switch]");
+      function setLang(lang) {
+        root.classList.toggle("lang-fr", lang === "fr");
+        root.classList.toggle("lang-en", lang === "en");
+        buttons.forEach(btn => btn.setAttribute("aria-pressed", String(btn.dataset.langSwitch === lang)));
+        document.documentElement.lang = lang;
+      }
+      buttons.forEach(btn => btn.addEventListener("click", () => setLang(btn.dataset.langSwitch)));
+      setLang("fr");
+
+      const revealElements = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); }
+          });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => observer.observe(el));
+      } else { revealElements.forEach(el => el.classList.add("is-visible")); }
+    })();
+  </script>
+</body>
+</html>

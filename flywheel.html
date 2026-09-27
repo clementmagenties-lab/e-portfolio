@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr" class="lang-fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Flywheel Energy Storage — Clément Magenties</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styles additionnels pour la mise en forme technique */
+    code {
+      background-color: #2d2d2d;
+      color: #f8f8f2;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+    .tech-list {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    .tech-list li {
+      margin-bottom: 8px;
+    }
+    /* Ajout d'un voile sombre pour garantir la lisibilité du texte sur tes photos */
+    .project-header-bg, .story-block {
+      position: relative;
+    }
+    .project-header-bg::before, .story-block::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+    .project-header-content, .story-card {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand__dot"></span><span>Clément Magenties</span></a>
+  </header>
+
+  <main>
+    <!-- SUGGESTION PHOTO : Extrait la diapositive 8 (Site de Shenzhen Energy) de ta présentation -->
+    <div class="project-header-bg reveal" style="background-image: url('1_flywheel.jpg');">
+      <div class="project-header-content">
+        <p class="eyebrow">2025 · CPGE TIPE</p>
+        <h1>Flywheel Energy Storage</h1>
+        <p class="hero__lead">Étude expérimentale d'un système de stockage d'énergie par volant d'inertie pour pallier l'intermittence des réseaux électriques[cite: 1].</p>
+      </div>
+    </div>
+
+    <!-- SUGGESTION PHOTO : Extrait la diapositive 12 (Vue d'ensemble du banc avec légendes) -->
+    <div class="story-block" style="background-image: url('2_flywheel.png');">
+      <div class="story-card reveal">
+        <span class="story-num">01</span>
+        <h2>Banc d'Essai & Modélisation</h2>
+        <p>Conception d'un banc d'essai expérimental pour répondre à l'intermittence des énergies renouvelables (comme le solaire)[cite: 1]. Le montage couple un moteur à courant continu avec un volant d'inertie physique interchangeable[cite: 1].</p>
+        <p>L'ensemble est instrumenté pour l'acquisition en temps réel sous le logiciel Latis Pro : mesure de la vitesse angulaire par fourche optique et suivi des grandeurs électriques via des sondes de tension/courant[cite: 1]. En amont, le moment d'inertie <em>J</em> de chaque volant a été rigoureusement caractérisé par la méthode du pendule de torsion (<em>J = CT²/4π²</em>)[cite: 1].</p>
+      </div>
+    </div>
+
+    <!-- SUGGESTION PHOTO : Extrait la diapositive 14 (Graphique Python montrant la vitesse brute vs ajustée) -->
+    <div class="story-block" style="background-image: url('3_flywheel.png');">
+      <div class="story-card reveal">
+        <span class="story-num">02</span>
+        <h2>Traitement du Signal & Gestion du Bruit</h2>
+        <p>Développement de scripts d'analyse sous Python exploitant <code>NumPy</code> et <code>Matplotlib</code> pour traiter les données brutes des cycles de charge et de décharge[cite: 1]. Une étape critique a consisté à gérer le bruit inhérent aux capteurs[cite: 1].</p>
+        <p>L'algorithme analyse les données de la fourche optique en isolant les puits de tension fonctionnels (via des seuils conditionnels, ex: <code>tension < 3V</code>)[cite: 1]. Ce nettoyage élimine les fluctuations parasites et permet de générer une courbe de vitesse de rotation ajustée et lissée[cite: 1]. L'intégration numérique (<code>np.trapz</code>) de ces données fiabilisées permet ensuite de calculer précisément l'énergie stockée et d'isoler les pertes[cite: 1].</p>
+      </div>
+    </div>
+
+    <!-- SUGGESTION PHOTO : Extrait la diapositive 18 (Les deux photos : volant en béton et volant roue de vélo) -->
+    <div class="story-block" style="background-image: url('4_flywheel.png');">
+      <div class="story-card reveal">
+        <span class="story-num">03</span>
+        <h2>Analyse Comparative & Rendement</h2>
+        <p>Confrontation des performances de deux géométries de volants pour évaluer l'impact de la répartition des masses et des frottements aérodynamiques[cite: 1] :</p>
+        <ul class="tech-list">
+          <li><strong>Volant en béton :</strong> <em>J</em> = 0,0042 kg.m², vitesse max de 75 rad/s[cite: 1]. Rendement global de 8,7% avec un rendement à la décharge atteignant 25,1%[cite: 1].</li>
+          <li><strong>Volant « roue de vélo » :</strong> <em>J</em> = 0,098 kg.m², vitesse max de 32 rad/s[cite: 1]. Rendement global limité à 1,1%[cite: 1].</li>
+        </ul>
+        <p>L'étude prouve techniquement que pour optimiser le rendement d'un tel système sur le réseau électrique, il est impératif de maximiser la vitesse de rotation, de minimiser les frottements mécaniques et de privilégier des cycles de stockage courts[cite: 1].</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (() => {
+      const revealElements = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); } });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => observer.observe(el));
+      } else { revealElements.forEach(el => el.classList.add("is-visible")); }
+    })();
+  </script>
+</body>
+</html>
